@@ -1,0 +1,74 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "b-blocks/test-purpose",
+	"version": "1.0.0",
+	"title": "Profile Card",
+	"category": "widgets",
+	"description": "Short description of the Test Purpose",
+	"keywords": [
+		"Profile Card"
+	],
+	"textdomain": "b-blocks",
+	"attributes": {
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"purposeType": {
+			"type": "string",
+			"default": "test"
+		},
+		"colors":{
+			"type":"object",
+			"default":{
+				"color": "black",
+				"bg": "#B1C5A4"
+			}
+		},
+		"name":{
+			"type":"string",
+			"default":"SHIHAB SHAMIM"
+		},
+		"passsionate":{
+			"type":"string",
+			"default":"Web Developer"
+		},
+		"company":{
+			"type":"string",
+			"default":"bplugins.com"
+
+		},
+		"about":{
+			"type":"string",
+			"default":"I am a frontend developer with a particular interest in making thing simple task. I try to keep up security and best practice , and am always looking for new things to learn."
+		},
+		"social":{
+			"type":"boolean",
+			"default":true
+		},
+		"target":{
+			"type":"boolean",
+			"default":true
+		},
+		"Profile":{
+			"type":"string",
+			"default":"https://i.ibb.co.com/Wcryhg0/shihab2.jpg"
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./view.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}

@@ -441,33 +441,6 @@ const Style = ({
 
 /***/ }),
 
-/***/ "./src/Components/Frontend/BlockName.js":
-/*!**********************************************!*\
-  !*** ./src/Components/Frontend/BlockName.js ***!
-  \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-const BlockName = ({
-  attributes
-}) => {
-  const {
-    purposeType
-  } = attributes;
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "bBlocksTestPurpose"
-  }, purposeType === "test" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Every text is written for a reason. For example, every text message you send has a purpose, whether that is to let your mum know when you will be home.") : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "If someone sends you an invitation to a party, for example, they are telling you what time to arrive and what the sender is celebrating, and they might even."));
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BlockName);
-
-/***/ }),
-
 /***/ "./src/style.scss":
 /*!************************!*\
   !*** ./src/style.scss ***!
@@ -610,22 +583,106 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
 /* harmony import */ var _Components_Common_Style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/Common/Style */ "./src/Components/Common/Style.js");
-/* harmony import */ var _Components_Frontend_BlockName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Components/Frontend/BlockName */ "./src/Components/Frontend/BlockName.js");
 
 
 
 
+// import BlockName from './Components/Frontend/BlockName';
+// import { RichText } from "@wordpress/block-editor";
 
 document.addEventListener('DOMContentLoaded', () => {
   const blockNameEls = document.querySelectorAll('.wp-block-b-blocks-test-purpose');
   blockNameEls.forEach(blockNameEl => {
     const attributes = JSON.parse(blockNameEl.dataset.attributes);
+    const {
+      purposeType,
+      name,
+      passsionate,
+      company,
+      about,
+      social,
+      target,
+      Profile
+    } = attributes;
     (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(blockNameEl).render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Common_Style__WEBPACK_IMPORTED_MODULE_3__["default"], {
       attributes: attributes,
       id: blockNameEl.id
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Frontend_BlockName__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      attributes: attributes
-    })));
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "profile-card"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "profile-header"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      className: "profile-photo",
+      src: Profile,
+      alt: "Profile Photo"
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "profile-info"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+      dangerouslySetInnerHTML: {
+        __html: name
+      },
+      className: "rich-text-placeholder\xA0name"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      dangerouslySetInnerHTML: {
+        __html: passsionate
+      },
+      className: "rich-text-placeholder\xA0name"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      dangerouslySetInnerHTML: {
+        __html: company
+      },
+      className: "rich-text-placeholder\xA0name"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "buttons"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      href: "#",
+      className: "button-1 email"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      className: "gmail",
+      src: "https://i.ibb.co/sJLSZzm/gmail.png",
+      alt: "Gmail Icon"
+    }), " ", "Email"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      href: "#",
+      className: "button-2 linked"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      className: "linkedin",
+      src: "https://i.ibb.co.com/sRm0tpG/link.png",
+      alt: "Gmail Icon"
+    }), " ", "Linkedin")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "about"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+      id: "about-title"
+    }, "About"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      dangerouslySetInnerHTML: {
+        __html: about
+      },
+      className: "rich-text-placeholder\xA0name"
+    })), social && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "social-links"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      href: "https://www.facebook.com/Shihab.shamim.2024",
+      target: target ? "_blank" : "_self",
+      rel: target ? "noopener noreferrer" : undefined
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: "https://i.ibb.co.com/X4ymh8H/FACEBOOK.png",
+      alt: "FACEBOOK"
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: "https://i.ibb.co/7Q23vbf/linkedin.png",
+      alt: "LINKEDIN",
+      onClick: () => {
+        window.open("https://www.linkedin.com/in/shihabshamim/", target ? "_blank" : "_self");
+      },
+      style: {
+        cursor: "pointer"
+      }
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      href: "https://github.com/shihab-shamim",
+      target: target ? "_blank" : "_self",
+      rel: target ? "noopener noreferrer" : undefined
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: "https://i.ibb.co.com/sVz3xWm/github.png",
+      alt: "GitHub"
+    })))))));
     blockNameEl?.removeAttribute('data-attributes');
   });
 });
